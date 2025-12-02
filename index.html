@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamScape Studio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo" onclick="showPage('home')">DreamScape</div>
+        <nav>
+            <a onclick="showPage('home')">Home</a>
+            <a onclick="showPage('creative')">Creative Art</a>
+            <a onclick="showPage('photo')">Photography</a>
+            <a onclick="showPage('web')">Web Design</a>
+        </nav>
+    </header>
+
+    <!-- HOME PAGE -->
+    <section class="hero page" id="home">
+        <div class="overlay"></div>
+        <h1>Welcome to DreamScape Studio</h1>
+        <p>Your imagination brought to life</p>
+        <button onclick="showPage('creative')">Explore Art</button>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features page" id="features">
+        <div class="feature-box" onclick="showPage('creative')">
+            <span class="material-icons">brush</span>
+            <h3>Creative Art</h3>
+            <p>Unique illustrations and artistic designs made with love.</p>
+        </div>
+
+        <div class="feature-box" onclick="showPage('photo')">
+            <span class="material-icons">camera_alt</span>
+            <h3>Photography</h3>
+            <p>Beautiful visual stories captured in stunning detail.</p>
+        </div>
+
+        <div class="feature-box" onclick="showPage('web')">
+            <span class="material-icons">web</span>
+            <h3>Web Design</h3>
+            <p>Simple, clean and modern websites built for everyone.</p>
+        </div>
+    </section>
+
+    <!-- CREATIVE ART PAGE -->
+    <section class="subpage page" id="creative">
+        <h2>Creative Art</h2>
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" class="sub-img">
+        <p>
+            Explore a world of imagination—sketches, paintings, digital art,
+            and creative illustrations that speak louder than words.
+        </p>
+    </section>
+
+    <!-- PHOTOGRAPHY PAGE -->
+    <section class="subpage page" id="photo">
+        <h2>Photography</h2>
+        <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0" class="sub-img">
+        <p>
+            Capturing moments with detail, emotion, and breathtaking beauty.
+        </p>
+    </section>
+
+    <!-- WEB DESIGN PAGE -->
+    <section class="subpage page" id="web">
+        <h2>Web Design</h2>
+        <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546" class="sub-img">
+        <p>
+            Clean, modern and simple designs made to fit any purpose.
+        </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 DreamScape Studio — Created with ❤️</p>
+    </footer>
+
+    <!-- PAGE SWITCH SCRIPT -->
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+            document.getElementById(pageId).style.display = 'block';
+
+            // if home page is opened, show features too
+            if (pageId === 'home') {
+                document.getElementById('features').style.display = 'flex';
+            } else {
+                document.getElementById('features').style.display = 'none';
+            }
+        }
+
+        // Start with home page visible
+        showPage('home');
+    </script>
+
+</body>
+</html>
